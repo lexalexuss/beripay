@@ -94,17 +94,25 @@ const linkCls = "text-accent-ink underline underline-offset-2 hover:text-accent"
           {f.requisites.map((line) => <p>{line}</p>)}
         </div>
         <p>{f.disclaimer}</p>
-        <p>
-          {f.docsLabel}:{" "}
-          {
-            f.docLinks.map((d, i) => (
-              <>
-                {i > 0 && " · "}
-                {d.label} — <a href={localePath(lang, d.slug)} class={linkCls}>{`${SITE}/${d.slug}`}</a>
-              </>
-            ))
-          }
-        </p>
+        <div>
+          <p class="mb-2">{f.docsLabel}:</p>
+          <!-- Each document is a button to its own page; the canonical URL stays visible (required by the spec). -->
+          <ul class="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              f.docLinks.map((d) => (
+                <li class="grid">
+                  <a
+                    href={localePath(lang, d.slug)}
+                    class="grid h-full content-start gap-1 rounded-xl border border-line bg-surface px-4 py-3 transition-colors hover:border-accent/40 hover:bg-accent/5"
+                  >
+                    <span class="text-[13px] font-semibold text-ink">{d.label}</span>
+                    <span class="break-all text-[11px] text-muted sm:text-xs">{`${SITE}/${d.slug}`}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
         <p>
           {f.complianceLabel}: <a href={`mailto:${COMPLIANCE_EMAIL}`} class={linkCls}>{COMPLIANCE_EMAIL}</a>
           {" · "}
