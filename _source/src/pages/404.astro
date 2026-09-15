@@ -1,0 +1,50 @@
+---
+// GitHub Pages serves this file for any unknown URL. The text language is taken from the URL prefix,
+// then the saved choice (cookie), then the browser language.
+import "../styles/global.css";
+import { LANGS, LANG_COOKIE, localePath } from "../i18n/config";
+import { t } from "../i18n/ui";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 · BeriPay</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  </head>
+  <body class="grid min-h-screen place-items-center bg-white px-4">
+    {
+      LANGS.map((l) => (
+        <section data-lang={l} hidden={l !== "en"} class="max-w-md text-center">
+          <a href={localePath(l)}>
+            <img src="/images/logo-96.png" alt={t(l).brand} width="64" height="64" class="mx-auto mb-6 h-16 w-16" />
+          </a>
+          <p class="mb-2 text-6xl font-bold text-accent">404</p>
+          <h1 class="mb-3 text-2xl font-bold text-ink">{t(l).notFound.title}</h1>
+          <p class="mb-8 text-muted">{t(l).notFound.text}</p>
+          <a
+            href={localePath(l)}
+            class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white hover:bg-accent/90"
+          >
+            {t(l).notFound.button}
+          </a>
+        </section>
+      ))
+    }
+    <script is:inline define:vars={{ langs: LANGS, cookie: LANG_COOKIE }}>
+      (function () {
+        var p = location.pathname.split("/")[1];
+        var m = document.cookie.match(new RegExp("(?:^|;\\s*)" + cookie + "=([a-z]{2})"));
+        var b = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase().slice(0, 2);
+        var l = langs.indexOf(p) !== -1 ? p : m && langs.indexOf(m[1]) !== -1 ? m[1] : langs.indexOf(b) !== -1 ? b : "en";
+        document.documentElement.lang = l === "pt" ? "pt-BR" : l;
+        document.querySelectorAll("[data-lang]").forEach(function (s) {
+          s.hidden = s.getAttribute("data-lang") !== l;
+        });
+      })();
+    </script>
+  </body>
+</html>

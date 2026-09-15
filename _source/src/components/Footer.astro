@@ -1,0 +1,127 @@
+---
+import {
+  BOT_URL,
+  COMPLIANCE_EMAIL,
+  DOCS,
+  LEGAL_EMAIL,
+  NEXTLAB_URL,
+  SITE,
+  SUPPORT_URL,
+  localePath,
+  type Lang,
+} from "../i18n/config";
+import { t } from "../i18n/ui";
+import Icon from "./Icon.astro";
+import TelegramIcon from "./TelegramIcon.astro";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ui = t(lang);
+const f = ui.footer;
+const year = new Date().getFullYear();
+const linkCls = "text-accent-ink underline underline-offset-2 hover:text-accent";
+---
+
+<footer class="border-t border-line bg-surface">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <a href={localePath(lang)} class="mb-4 flex items-center gap-2.5">
+          <img src="/images/logo-96.png" alt="" width="40" height="40" class="h-10 w-10" loading="lazy" />
+          <span class="text-lg font-bold text-ink">{ui.brand}</span>
+        </a>
+        <p class="mb-5 max-w-md text-sm text-muted">{f.about}</p>
+        <a
+          href={BOT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 font-semibold text-white transition-colors hover:bg-accent/90"
+        >
+          <TelegramIcon />
+          {ui.cta.bot}
+        </a>
+      </div>
+
+      <div>
+        <h3 class="mb-4 font-semibold text-ink">{f.sections}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href={localePath(lang)} class="text-muted transition-colors hover:text-accent">{ui.nav.home}</a></li>
+          {
+            DOCS.map((d) => (
+              <li>
+                <a href={localePath(lang, d)} class="text-muted transition-colors hover:text-accent">
+                  {ui.nav.docs[d]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-4 font-semibold text-ink">{f.contacts}</h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-muted hover:text-accent">
+              <Icon name="message" class="h-4 w-4 shrink-0" />@BeriPay_bot
+            </a>
+          </li>
+          <li>
+            <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-muted hover:text-accent">
+              <Icon name="help" class="h-4 w-4 shrink-0" />{f.support}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${COMPLIANCE_EMAIL}`} class="flex items-center gap-2 text-muted hover:text-accent">
+              <Icon name="mail" class="h-4 w-4 shrink-0" /><span>{f.complianceLabel}: {COMPLIANCE_EMAIL}</span>
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${LEGAL_EMAIL}`} class="flex items-center gap-2 text-muted hover:text-accent">
+              <Icon name="mail" class="h-4 w-4 shrink-0" /><span>{f.legalLabel}: {LEGAL_EMAIL}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-line pt-8">
+      <div class="mb-8 space-y-4 rounded-2xl border border-line bg-white p-5 text-xs leading-relaxed text-muted sm:text-[13px]">
+        <div>
+          <p class="mb-1.5 text-sm font-semibold text-ink">{f.adminTitle}</p>
+          {f.requisites.map((line) => <p>{line}</p>)}
+        </div>
+        <p>{f.disclaimer}</p>
+        <p>
+          {f.docsLabel}:{" "}
+          {
+            f.docLinks.map((d, i) => (
+              <>
+                {i > 0 && " · "}
+                {d.label} — <a href={localePath(lang, d.slug)} class={linkCls}>{`${SITE}/${d.slug}`}</a>
+              </>
+            ))
+          }
+        </p>
+        <p>
+          {f.complianceLabel}: <a href={`mailto:${COMPLIANCE_EMAIL}`} class={linkCls}>{COMPLIANCE_EMAIL}</a>
+          {" · "}
+          {f.legalLabel}: <a href={`mailto:${LEGAL_EMAIL}`} class={linkCls}>{LEGAL_EMAIL}</a>
+        </p>
+        <p>
+          {f.techAdmin}: <a href={NEXTLAB_URL} target="_blank" rel="noopener" class={linkCls}>{NEXTLAB_URL}</a>
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-3 text-center md:flex-row md:text-left">
+        <p class="text-sm text-muted">{f.copyright.replace("{year}", String(year))}</p>
+        <p class="text-xs text-muted">
+          {f.siteLabel}: <a href={localePath(lang)} class="hover:text-accent">{SITE}</a> | {f.support}:{" "}
+          <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" class="hover:text-accent">{SUPPORT_URL}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Бери и плати! - Виртуальные карты</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 · BeriPay</title><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="stylesheet" href="/assets/ui.d-HbXrIx.css"></head><body class="grid min-h-screen place-items-center bg-white px-4"><section data-lang="ru" hidden class="max-w-md text-center"><a href="/ru/"><img src="/images/logo-96.png" alt="Бери и плати!" width="64" height="64" class="mx-auto mb-6 h-16 w-16"></a><p class="mb-2 text-6xl font-bold text-accent">404</p><h1 class="mb-3 text-2xl font-bold text-ink">Страница не найдена</h1><p class="mb-8 text-muted">Возможно, ссылка устарела или в адресе опечатка.</p><a href="/ru/" class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white hover:bg-accent/90">На главную</a></section><section data-lang="en" class="max-w-md text-center"><a href="/en/"><img src="/images/logo-96.png" alt="BeriPay" width="64" height="64" class="mx-auto mb-6 h-16 w-16"></a><p class="mb-2 text-6xl font-bold text-accent">404</p><h1 class="mb-3 text-2xl font-bold text-ink">Page not found</h1><p class="mb-8 text-muted">The link may be outdated or the address may contain a typo.</p><a href="/en/" class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white hover:bg-accent/90">Go to home page</a></section><section data-lang="pt" hidden class="max-w-md text-center"><a href="/pt/"><img src="/images/logo-96.png" alt="BeriPay" width="64" height="64" class="mx-auto mb-6 h-16 w-16"></a><p class="mb-2 text-6xl font-bold text-accent">404</p><h1 class="mb-3 text-2xl font-bold text-ink">Página não encontrada</h1><p class="mb-8 text-muted">O link pode estar desatualizado ou o endereço pode conter um erro de digitação.</p><a href="/pt/" class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white hover:bg-accent/90">Ir para o início</a></section><script>(function(){const langs = ["ru","en","pt"];
+const cookie = "bp_lang";
 
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
-  </head>
-  <body>
-  </body>
-</html>
+      (function () {
+        var p = location.pathname.split("/")[1];
+        var m = document.cookie.match(new RegExp("(?:^|;\\s*)" + cookie + "=([a-z]{2})"));
+        var b = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase().slice(0, 2);
+        var l = langs.indexOf(p) !== -1 ? p : m && langs.indexOf(m[1]) !== -1 ? m[1] : langs.indexOf(b) !== -1 ? b : "en";
+        document.documentElement.lang = l === "pt" ? "pt-BR" : l;
+        document.querySelectorAll("[data-lang]").forEach(function (s) {
+          s.hidden = s.getAttribute("data-lang") !== l;
+        });
+      })();
+    })();</script></body></html>

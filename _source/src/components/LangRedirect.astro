@@ -1,0 +1,61 @@
+---
+// Full page for URLs without a language: detects the visitor language and redirects to /<lang>/<slug>/.
+import { HREFLANG, LANGS, LANG_COOKIE, LANG_COOKIE_MAX_AGE, LANG_LABEL, SITE, localePath } from "../i18n/config";
+import { langDetectScript } from "../lib/lang-detect";
+
+interface Props {
+  /** target document slug, "" = home */
+  slug?: string;
+  /** true for the 404 page: no hreflang and the target is the home page */
+  notFound?: boolean;
+}
+const { slug = "", notFound = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline set:html={langDetectScript(slug)} />
+    <title>Бери и плати! · BeriPay</title>
+    <meta name="robots" content={notFound ? "noindex" : "noindex, follow"} />
+    {
+      !notFound && LANGS.map((l) => <link rel="alternate" hreflang={HREFLANG[l]} href={SITE + localePath(l, slug)} />)
+    }
+    {!notFound && <link rel="alternate" hreflang="x-default" href={SITE + (slug ? `/${slug}/` : "/")} />}
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #fff;
+        color: #22242e;
+      }
+      .box { text-align: center; padding: 24px; }
+      .langs { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
+      .langs a { padding: 8px 14px; border: 1px solid #ebebeb; border-radius: 999px; color: #19553c; text-decoration: none; font-weight: 600; }
+      .langs a:hover { background: #f4f4f4; }
+      img { width: 56px; height: 56px; }
+      p { color: #7d7f82; margin: 12px 0 0; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="/images/logo-96.png" alt="BeriPay" />
+      <p>Бери и плати! · BeriPay</p>
+      <nav class="langs">
+        {LANGS.map((l) => <a href={localePath(l, slug)} hreflang={l} data-set-lang={l}>{LANG_LABEL[l]}</a>)}
+      </nav>
+    </div>
+    <script is:inline define:vars={{ cookie: LANG_COOKIE, maxAge: LANG_COOKIE_MAX_AGE }}>
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("[data-set-lang]");
+        if (a) document.cookie = cookie + "=" + a.getAttribute("data-set-lang") + "; path=/; max-age=" + maxAge + "; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
+      });
+    </script>
+  </body>
+</html>

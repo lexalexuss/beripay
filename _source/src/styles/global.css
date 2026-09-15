@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/*
+  BeriPay palette — the ONLY place where site colors are defined.
+  Source: BeriPay Telegram Mini App screenshots (main screen, referral screen), sampled 2026-09-14.
+  Tailwind utilities are generated from these tokens: bg-accent, text-ink, bg-surface, bg-accent/10, …
+*/
+@theme {
+  --color-accent: #0da568; /* CTA buttons («Пополнить», «Копировать»), «Смотреть все» link, positive amounts */
+  --color-accent-ink: #19553c; /* card green — small green text/links that must stay readable on white */
+  --color-card: #123829; /* card gradient start */
+  --color-card-end: #19553c; /* card gradient end */
+
+  --color-ink: #22242e; /* main text («История», balance) */
+  --color-muted: #7d7f82; /* secondary text (dates, «Добро пожаловать») */
+  --color-surface: #f4f4f4; /* panels and icon circles */
+  --color-line: #ebebeb; /* hairline borders (neutral, close to surface) */
+  --color-page: #ffffff; /* page background */
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Legal documents: body text 12pt, section titles 14pt, no decorative divider lines. */
+.doc {
+  font-size: 12pt;
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+.doc h2 {
+  font-size: 14pt;
+  line-height: 1.35;
+  font-weight: 700;
+  margin: 2em 0 0.75em;
+}
+.doc p {
+  margin: 0 0 0.9em;
+}
+.doc ul,
+.doc ol {
+  margin: 0 0 1em;
+  padding-left: 1.4em;
+}
+.doc ul {
+  list-style: disc;
+}
+.doc ol {
+  list-style: decimal;
+}
+.doc li {
+  margin: 0.3em 0;
+}
+.doc li::marker {
+  color: var(--color-accent);
+}
+.doc strong {
+  font-weight: 600;
+}
+.doc a {
+  color: var(--color-accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.doc a:hover {
+  color: var(--color-accent);
+}
+.doc .table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.2em;
+}
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12pt;
+  margin: 0 0 1.2em;
+}
+.doc th,
+.doc td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55em 0.8em;
+  border: 1px solid var(--color-line);
+}
+.doc th {
+  background: var(--color-surface);
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .doc table {
+    display: block;
+    overflow-x: auto;
+  }
+}

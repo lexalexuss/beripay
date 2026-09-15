@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+import { HREFLANG, HTML_LANG, LANGS, LANG_COOKIE, LANG_COOKIE_MAX_AGE, OG_LOCALE, SITE, localePath, type Lang } from "../i18n/config";
+import { t } from "../i18n/ui";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  lang: Lang;
+  /** "" for the home page, otherwise the document slug */
+  slug: string;
+  title: string;
+  description: string;
+}
+const { lang, slug, title, description } = Astro.props;
+const ui = t(lang);
+const canonical = SITE + localePath(lang, slug);
+const alternates = LANGS.map((l) => ({ lang: l, href: SITE + localePath(l, slug) }));
+const xDefault = SITE + (slug ? `/${slug}/` : "/");
+
+// ?lang=xx on a language-prefixed page switches to that language (URL wins over everything).
+const langParamScript = `(function(){var q=new URLSearchParams(location.search),l=q.get("lang");var m=${JSON.stringify(
+  Object.fromEntries(LANGS.map((l) => [l, localePath(l, slug)])),
+)};if(l&&m[l]&&l!==${JSON.stringify(lang)}){q.delete("lang");var s=q.toString();location.replace(m[l]+(s?"?"+s:"")+location.hash);}})();`;
+---
+
+<!doctype html>
+<html lang={HTML_LANG[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline set:html={langParamScript} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={HREFLANG[a.lang]} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={ui.brand} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${SITE}/images/og-image.jpg`} />
+    <meta property="og:locale" content={OG_LOCALE[lang]} />
+    {LANGS.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header lang={lang} slug={slug} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <script is:inline define:vars={{ cookie: LANG_COOKIE, maxAge: LANG_COOKIE_MAX_AGE }}>
+      // Remember a manual language choice for 400 days.
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("[data-set-lang]");
+        if (!a) return;
+        document.cookie = cookie + "=" + a.getAttribute("data-set-lang") + "; path=/; max-age=" + maxAge + "; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+---
+import Base from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import TelegramIcon from "../../components/TelegramIcon.astro";
+import { BOT_URL, LANGS, type Lang } from "../../i18n/config";
+import { t } from "../../i18n/ui";
+import { SERVICES } from "../../data/services";
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const ui = t(lang);
+const btn =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-accent font-semibold text-white transition-colors hover:bg-accent/90";
+---
+
+<Base lang={lang} slug="" title={ui.meta.homeTitle} description={ui.meta.homeDescription}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="text-center lg:text-left">
+          <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent-ink"
+          >
+            <span class="h-2 w-2 animate-pulse rounded-full bg-accent"></span>
+            {ui.hero.badge}
+          </div>
+          <h1 class="mb-6 text-4xl font-bold leading-tight text-ink sm:text-5xl xl:text-[3.5rem]">
+            {ui.hero.title1}
+            <span class="block text-accent">{ui.hero.title2}</span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-xl text-lg text-muted lg:mx-0">{ui.hero.text}</p>
+          <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+            <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class={`${btn} px-8 py-4 text-lg`}>
+              <TelegramIcon class="h-6 w-6" />
+              {ui.cta.issue}
+            </a>
+          </div>
+          <div class="mt-12 grid grid-cols-3 gap-4 border-t border-line pt-8 sm:gap-6">
+            {
+              ui.stats.map((s) => (
+                <div>
+                  <div class="text-lg font-bold leading-tight text-ink sm:text-2xl">{s.value}</div>
+                  <div class="mt-1 text-xs text-muted sm:text-sm">{s.label}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="relative flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -inset-6 rounded-[2.5rem] bg-accent/10 blur-2xl"></div>
+            <img
+              src="/images/card-640.webp"
+              srcset="/images/card-640.webp 640w, /images/card-1024.webp 1024w"
+              sizes="(min-width: 640px) 400px, 320px"
+              width="640"
+              height="387"
+              alt={ui.hero.cardAlt}
+              class="relative w-[300px] -rotate-6 drop-shadow-[0_24px_40px_rgba(18,56,41,0.28)] transition-transform duration-500 hover:-rotate-3 sm:w-[400px]"
+            />
+            <div class="absolute -bottom-4 -left-2 rounded-full border border-line bg-white px-4 py-2 text-accent-ink shadow-lg">
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="h-4 w-4" />
+                <span class="text-sm font-semibold">{ui.hero.cardBadge}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-2xl font-bold text-ink sm:text-3xl">{ui.services.title}</h2>
+        <p class="mx-auto max-w-2xl text-muted">{ui.services.text}</p>
+      </div>
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+        {
+          SERVICES.map((s) => (
+            <li class="flex items-center gap-3 rounded-xl border border-line bg-white px-4 py-2.5 transition-colors hover:border-accent/40">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-surface text-accent">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <path d={s.d} />
+                </svg>
+              </span>
+              <span class="font-medium text-ink">{s.name}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-14 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.features.title}</h2>
+        <p class="mx-auto max-w-2xl text-muted">{ui.features.text}</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          ui.features.items.map((f) => (
+            <div class="rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)]">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-surface text-accent">
+                <Icon name={f.icon as any} class="h-6 w-6" />
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-ink">{f.title}</h3>
+              <p class="text-muted">{f.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Start -->
+  <section class="pb-16 lg:pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-surface px-6 py-12 text-center sm:px-12">
+        <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.start.title}</h2>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-muted">{ui.start.text}</p>
+        <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class={`${btn} px-8 py-4 text-lg`}>
+          <TelegramIcon class="h-6 w-6" />
+          {ui.cta.botLong}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referral -->
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <img
+          src="/images/referral-640.webp"
+          srcset="/images/referral-640.webp 640w, /images/referral-1200.webp 1200w"
+          sizes="(min-width: 1024px) 600px, 100vw"
+          width="1200"
+          height="584"
+          alt={ui.referral.imageAlt}
+          loading="lazy"
+          class="w-full rounded-3xl border border-line"
+        />
+        <div>
+          <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.referral.title}</h2>
+          <p class="mb-6 text-lg text-muted">{ui.referral.text}</p>
+          <ul class="mb-8 space-y-3">
+            {
+              ui.referral.bullets.map((b) => (
+                <li class="flex items-center gap-3 text-ink">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <Icon name="check" class="h-4 w-4" />
+                  </span>
+                  {b}
+                </li>
+              ))
+            }
+          </ul>
+          <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class={`${btn} px-6 py-3`}>
+            {ui.cta.more}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

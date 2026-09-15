@@ -1,0 +1,30 @@
+---
+import type { MarkdownInstance } from "astro";
+import Base from "../../layouts/Base.astro";
+import { DOCS, LANGS, type DocSlug, type Lang } from "../../i18n/config";
+import { t } from "../../i18n/ui";
+
+type Doc = MarkdownInstance<{ title: string }>;
+const files = import.meta.glob<Doc>("../../content/legal/*/*.md", { eager: true });
+const docFor = (lang: Lang, slug: DocSlug) => files[`../../content/legal/${lang}/${slug}.md`];
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => DOCS.map((doc) => ({ params: { lang, doc } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const slug = Astro.params.doc as DocSlug;
+const doc = docFor(lang, slug);
+if (!doc) throw new Error(`Missing legal document: content/legal/${lang}/${slug}.md`);
+const { Content } = doc;
+const title = doc.frontmatter.title;
+---
+
+<Base lang={lang} slug={slug} title={`${title} — ${t(lang).brand}`} description={t(lang).meta.docDescription[slug]}>
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <h1 class="mb-8 text-2xl font-bold leading-snug text-ink sm:text-3xl">{title}</h1>
+    <div class="doc">
+      <Content />
+    </div>
+  </article>
+</Base>

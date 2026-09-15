@@ -1,0 +1,30 @@
+---
+import { LANGS, LANG_LABEL, localePath, type Lang } from "../i18n/config";
+import { t } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+const { lang, slug } = Astro.props;
+---
+
+<nav class="flex items-center rounded-full bg-surface p-0.5" aria-label={t(lang).a11y.language}>
+  {
+    LANGS.map((l) => (
+      <a
+        href={localePath(l, slug)}
+        hreflang={l}
+        lang={l}
+        data-set-lang={l}
+        aria-current={l === lang ? "true" : undefined}
+        class:list={[
+          "px-2.5 py-1.5 text-xs font-semibold tracking-wide rounded-full transition-colors",
+          l === lang ? "bg-white text-accent-ink shadow-sm" : "text-muted hover:text-ink",
+        ]}
+      >
+        {LANG_LABEL[l]}
+      </a>
+    ))
+  }
+</nav>
