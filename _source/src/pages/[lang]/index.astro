@@ -18,15 +18,9 @@ const btn =
 <Base lang={lang} slug="" title={ui.meta.homeTitle} description={ui.meta.homeDescription}>
   <!-- Hero -->
   <section class="relative overflow-hidden">
-    <div class="relative mx-auto max-w-7xl px-4 pb-14 pt-8 sm:px-6 lg:px-8 lg:pb-24 lg:pt-12">
+    <div class="relative mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pt-12">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <div class="text-left">
-          <div
-            class="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent-ink"
-          >
-            <span class="h-2 w-2 animate-pulse rounded-full bg-accent"></span>
-            {ui.hero.badge}
-          </div>
           <h1 class="mb-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl xl:text-[3.5rem]">
             {ui.hero.title1}
             <span class="block text-accent">{ui.hero.title2}</span>
@@ -38,10 +32,9 @@ const btn =
               {ui.cta.issue}
             </a>
           </div>
-          <div class="mt-12 border-t border-line pt-8">
-            <div class="text-lg font-bold leading-tight text-ink sm:text-2xl">{ui.stats.value}</div>
-            <div class="mt-1 text-xs text-muted sm:text-sm">{ui.stats.label}</div>
-          </div>
+          <p class="mt-5 text-sm text-muted">
+            <span class="font-semibold text-ink">{ui.stats.value}</span> — {ui.stats.label}
+          </p>
         </div>
 
         <div class="relative flex justify-center lg:justify-end">
@@ -114,7 +107,7 @@ const btn =
           srcset="/images/referral-640.webp 640w, /images/referral-1200.webp 1200w"
           sizes="(min-width: 1024px) 600px, 100vw"
           width="1200"
-          height="584"
+          height="675"
           alt={ui.referral.imageAlt}
           loading="lazy"
           class="w-full rounded-3xl border border-line"

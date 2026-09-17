@@ -8,7 +8,7 @@ export interface UI {
   nav: { home: string; docs: Record<DocSlug, string> };
   a11y: { menu: string; language: string; home: string };
   cta: { issue: string; bot: string; botLong: string; more: string };
-  hero: { badge: string; title1: string; title2: string; text: string; cardAlt: string; cardBadge: string };
+  hero: { title1: string; title2: string; text: string; cardAlt: string; cardBadge: string };
   stats: { value: string; label: string };
   features: { title: string; text: string; items: Feature[] };
   start: { title: string; text: string };
@@ -60,7 +60,6 @@ const ru: UI = {
   a11y: { menu: "Меню", language: "Язык сайта", home: "На главную" },
   cta: { issue: "Выпустить карту", bot: "Перейти в бот", botLong: "Перейти в Telegram бот", more: "Узнать подробнее" },
   hero: {
-    badge: "Доступно в Telegram",
     title1: "Виртуальные карты",
     title2: "для зарубежных сервисов",
     text: "Оформите виртуальную карту в Telegram после выполнения условий сервиса, включая пополнение. Оплачивайте подписки, покупки и зарубежные сервисы в рамках лимитов карты и правил сервиса. Пополнение доступными способами в боте, включая СБП.",
@@ -159,7 +158,6 @@ const en: UI = {
   a11y: { menu: "Menu", language: "Website language", home: "Home page" },
   cta: { issue: "Get a card", bot: "Open the bot", botLong: "Open the Telegram bot", more: "Learn more" },
   hero: {
-    badge: "Available in Telegram",
     title1: "Virtual cards",
     title2: "for international services",
     text: "Get a virtual card in Telegram once you meet the service conditions, including a top-up. Pay for subscriptions, purchases and international services within the card limits and the service rules. Top up with the methods available in the bot, including SBP.",
@@ -258,7 +256,6 @@ const pt: UI = {
   a11y: { menu: "Menu", language: "Idioma do site", home: "Página inicial" },
   cta: { issue: "Emitir cartão", bot: "Abrir o bot", botLong: "Abrir o bot no Telegram", more: "Saiba mais" },
   hero: {
-    badge: "Disponível no Telegram",
     title1: "Cartões virtuais",
     title2: "para serviços internacionais",
     text: "Solicite um cartão virtual no Telegram após cumprir as condições do serviço, incluindo a recarga. Pague assinaturas, compras e serviços internacionais dentro dos limites do cartão e das regras do serviço. Recarga pelos métodos disponíveis no bot, incluindo SBP.",
