@@ -13,6 +13,16 @@ const lang = Astro.params.lang as Lang;
 const ui = t(lang);
 const btn =
   "inline-flex items-center justify-center gap-2 rounded-full bg-accent font-semibold text-white transition-colors hover:bg-accent/90";
+
+// The feature grid runs on 6 columns with each card spanning 2, so an incomplete last row
+// can be centred by half a column — impossible on a plain 3-column grid.
+// Works for any number of cards, not just the current five.
+const features = ui.features.items;
+const lgRest = features.length % 3; // cards left over in the last row of three
+const smRest = features.length % 2; // …and in the last row of two
+const lgFirst = lgRest ? features.length - lgRest : -1;
+const smFirst = smRest ? features.length - smRest : -1;
+const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-3" : "";
 ---
 
 <Base lang={lang} slug="" title={ui.meta.homeTitle} description={ui.meta.homeDescription}>
@@ -63,17 +73,24 @@ const btn =
   </section>
 
   <!-- Features -->
-  <section class="relative pb-16 lg:pb-24">
+  <section class="relative pb-16 lg:pb-24 lg:pt-10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- No background here: the hero glow shows through behind the heading. -->
       <div class="mx-auto mb-8 max-w-3xl text-center lg:mb-10">
         <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.features.title}</h2>
         <p class="mx-auto max-w-2xl text-muted">{ui.features.text}</p>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-4 lg:grid-cols-6">
         {
-          ui.features.items.map((f) => (
-            <div class="rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)]">
+          features.map((f, i) => (
+            <div
+              class:list={[
+                "rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)] sm:col-span-2",
+                i === lgFirst && lgOffset,
+                i === smFirst && "sm:col-start-2",
+                i === smFirst && i !== lgFirst && "lg:col-start-auto",
+              ]}
+            >
               <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-surface text-accent">
                 <Icon name={f.icon as any} class="h-6 w-6" />
               </div>
