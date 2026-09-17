@@ -9,8 +9,7 @@ export interface UI {
   a11y: { menu: string; language: string; home: string };
   cta: { issue: string; bot: string; botLong: string; more: string };
   hero: { badge: string; title1: string; title2: string; text: string; cardAlt: string; cardBadge: string };
-  stats: { value: string; label: string }[];
-  services: { title: string; text: string };
+  stats: { value: string; label: string };
   features: { title: string; text: string; items: Feature[] };
   start: { title: string; text: string };
   referral: { title: string; text: string; bullets: string[]; imageAlt: string };
@@ -68,15 +67,7 @@ const ru: UI = {
     cardAlt: "Бери и плати! — виртуальная карта",
     cardBadge: "Оплата за рубежом",
   },
-  stats: [
-    { value: "В Telegram", label: "выпуск после условий сервиса" },
-    { value: "100+", label: "стран мира" },
-    { value: "24/7", label: "поддержка" },
-  ],
-  services: {
-    title: "Оплачивайте зарубежные сервисы",
-    text: "Карту можно использовать в популярных зарубежных сервисах и магазинах, где она принимается",
-  },
+  stats: { value: "В Telegram", label: "выпуск после условий сервиса" },
   features: {
     title: "Почему выбирают нас",
     text: "Удобный сервис виртуальных карт с прозрачными условиями и быстрой поддержкой",
@@ -98,7 +89,6 @@ const ru: UI = {
         text: "Мы применяем проверку личности по запросу, санкционный скрининг и мониторинг операций. Решение о выпуске карты и обслуживании принимается с учётом риск-правил сервиса и партнёра-эмитента. Мы не банк и не обещаем одобрение каждой заявки.",
       },
       { icon: "smartphone", title: "Apple Pay & Google Pay", text: "Привязывайте карту к мобильным кошелькам для бесконтактной оплаты" },
-      { icon: "check", title: "Без скрытых комиссий", text: "Прозрачные тарифы без неожиданных списаний" },
     ],
   },
   start: {
@@ -176,15 +166,7 @@ const en: UI = {
     cardAlt: "BeriPay virtual card",
     cardBadge: "Payments abroad",
   },
-  stats: [
-    { value: "In Telegram", label: "issued once service conditions are met" },
-    { value: "100+", label: "countries" },
-    { value: "24/7", label: "support" },
-  ],
-  services: {
-    title: "Pay for international services",
-    text: "The card can be used with popular international services and stores where it is accepted",
-  },
+  stats: { value: "In Telegram", label: "issued once service conditions are met" },
   features: {
     title: "Why choose us",
     text: "A convenient virtual card service with transparent terms and responsive support",
@@ -206,7 +188,6 @@ const en: UI = {
         text: "We apply identity verification when requested, sanctions screening and transaction monitoring. Decisions on card issuance and servicing take into account the risk rules of the service and the issuing partner. We are not a bank and do not promise to approve every application.",
       },
       { icon: "smartphone", title: "Apple Pay & Google Pay", text: "Add the card to mobile wallets for contactless payments" },
-      { icon: "check", title: "No hidden fees", text: "Transparent pricing with no unexpected charges" },
     ],
   },
   start: {
@@ -284,15 +265,7 @@ const pt: UI = {
     cardAlt: "Cartão virtual BeriPay",
     cardBadge: "Pagamentos no exterior",
   },
-  stats: [
-    { value: "No Telegram", label: "emissão após cumprir as condições do serviço" },
-    { value: "100+", label: "países" },
-    { value: "24/7", label: "suporte" },
-  ],
-  services: {
-    title: "Pague serviços internacionais",
-    text: "O cartão pode ser usado em serviços e lojas internacionais populares onde é aceito",
-  },
+  stats: { value: "No Telegram", label: "emissão após cumprir as condições do serviço" },
   features: {
     title: "Por que nos escolher",
     text: "Um serviço prático de cartões virtuais, com condições transparentes e suporte ágil",
@@ -314,7 +287,6 @@ const pt: UI = {
         text: "Aplicamos verificação de identidade quando solicitada, triagem de sanções e monitoramento de operações. A decisão sobre a emissão e a manutenção do cartão leva em conta as regras de risco do serviço e do parceiro emissor. Não somos um banco e não prometemos aprovar todas as solicitações.",
       },
       { icon: "smartphone", title: "Apple Pay & Google Pay", text: "Vincule o cartão às carteiras digitais para pagamentos por aproximação" },
-      { icon: "check", title: "Sem taxas ocultas", text: "Tarifas transparentes, sem cobranças inesperadas" },
     ],
   },
   start: {

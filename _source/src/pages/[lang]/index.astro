@@ -4,7 +4,6 @@ import Icon from "../../components/Icon.astro";
 import TelegramIcon from "../../components/TelegramIcon.astro";
 import { BOT_URL, LANGS, type Lang } from "../../i18n/config";
 import { t } from "../../i18n/ui";
-import { SERVICES } from "../../data/services";
 
 export function getStaticPaths() {
   return LANGS.map((lang) => ({ params: { lang } }));
@@ -39,15 +38,9 @@ const btn =
               {ui.cta.issue}
             </a>
           </div>
-          <div class="mt-12 grid grid-cols-3 gap-4 border-t border-line pt-8 sm:gap-6">
-            {
-              ui.stats.map((s) => (
-                <div>
-                  <div class="text-lg font-bold leading-tight text-ink sm:text-2xl">{s.value}</div>
-                  <div class="mt-1 text-xs text-muted sm:text-sm">{s.label}</div>
-                </div>
-              ))
-            }
+          <div class="mt-12 border-t border-line pt-8">
+            <div class="text-lg font-bold leading-tight text-ink sm:text-2xl">{ui.stats.value}</div>
+            <div class="mt-1 text-xs text-muted sm:text-sm">{ui.stats.label}</div>
           </div>
         </div>
 
@@ -72,30 +65,6 @@ const btn =
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="bg-surface py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 text-center">
-        <h2 class="mb-4 text-2xl font-bold text-ink sm:text-3xl">{ui.services.title}</h2>
-        <p class="mx-auto max-w-2xl text-muted">{ui.services.text}</p>
-      </div>
-      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-        {
-          SERVICES.map((s) => (
-            <li class="flex items-center gap-3 rounded-xl border border-line bg-white px-4 py-2.5 transition-colors hover:border-accent/40">
-              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-surface text-accent">
-                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
-                  <path d={s.d} />
-                </svg>
-              </span>
-              <span class="font-medium text-ink">{s.name}</span>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </section>
 
