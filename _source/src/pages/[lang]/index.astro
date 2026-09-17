@@ -32,23 +32,23 @@ const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-
     <div class="relative mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pt-12">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <div class="text-left">
-          <h1 class="mb-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl xl:text-[3.5rem]">
+          <h1 class="reveal mb-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl xl:text-[3.5rem]">
             {ui.hero.title1}
             <span class="block text-accent">{ui.hero.title2}</span>
           </h1>
-          <p class="mb-8 max-w-xl text-lg text-muted">{ui.hero.text}</p>
-          <div class="flex flex-col gap-4 sm:flex-row">
+          <p class="reveal reveal-d1 mb-8 max-w-xl text-lg text-muted">{ui.hero.text}</p>
+          <div class="reveal reveal-d2 flex flex-col gap-4 sm:flex-row">
             <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class={`${btn} px-8 py-4 text-lg`}>
               <TelegramIcon class="h-6 w-6" />
               {ui.cta.issue}
             </a>
           </div>
-          <p class="mt-5 ps-4 text-sm text-muted">
+          <p class="reveal reveal-d3 mt-5 ps-4 text-sm text-muted">
             <span class="font-semibold text-ink">{ui.stats.value}</span> — {ui.stats.label}
           </p>
         </div>
 
-        <div class="relative flex justify-center lg:justify-end">
+        <div class="reveal reveal-d1 relative flex justify-center lg:justify-end">
           <div class="relative">
             <div class="pointer-events-none absolute -inset-x-10 -bottom-48 -top-10 rounded-[3rem] bg-accent/10 blur-3xl"></div>
             <img
@@ -76,7 +76,7 @@ const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-
   <section class="relative pb-16 lg:pb-24 lg:pt-10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- No background here: the hero glow shows through behind the heading. -->
-      <div class="mx-auto mb-8 max-w-3xl text-center lg:mb-10">
+      <div class="reveal mx-auto mb-8 max-w-3xl text-center lg:mb-10">
         <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.features.title}</h2>
         <p class="mx-auto max-w-2xl text-muted">{ui.features.text}</p>
       </div>
@@ -85,7 +85,8 @@ const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-
           features.map((f, i) => (
             <div
               class:list={[
-                "rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)] sm:col-span-2",
+                "reveal rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)] sm:col-span-2",
+                ["", "reveal-d1", "reveal-d2"][i % 3],
                 i === lgFirst && lgOffset,
                 i === smFirst && "sm:col-start-2",
                 i === smFirst && i !== lgFirst && "lg:col-start-auto",
@@ -106,7 +107,7 @@ const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-
   <!-- Start -->
   <section class="pb-16 lg:pb-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-surface px-6 py-12 text-center sm:px-12">
+      <div class="reveal rounded-3xl bg-surface px-6 py-12 text-center sm:px-12">
         <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.start.title}</h2>
         <p class="mx-auto mb-8 max-w-2xl text-lg text-muted">{ui.start.text}</p>
         <a href={BOT_URL} target="_blank" rel="noopener noreferrer" class={`${btn} px-8 py-4 text-lg`}>
@@ -129,9 +130,9 @@ const lgOffset = lgRest === 2 ? "lg:col-start-2" : lgRest === 1 ? "lg:col-start-
           height="675"
           alt={ui.referral.imageAlt}
           loading="lazy"
-          class="w-full rounded-3xl border border-line"
+          class="reveal w-full rounded-3xl border border-line"
         />
-        <div>
+        <div class="reveal reveal-d1">
           <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.referral.title}</h2>
           <p class="mb-6 text-lg text-muted">{ui.referral.text}</p>
           <ul class="mb-8 space-y-3">
