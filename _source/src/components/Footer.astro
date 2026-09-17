@@ -94,28 +94,7 @@ const linkCls = "text-accent-ink underline underline-offset-2 hover:text-accent"
           {f.requisites.map((line) => <p>{line}</p>)}
         </div>
         <p>{f.disclaimer}</p>
-        <div>
-          <p class="mb-2">{f.docsLabel}:</p>
-          <ul class="flex flex-wrap gap-2">
-            {
-              f.docLinks.map((d) => (
-                <li>
-                  <a
-                    href={localePath(lang, d.slug)}
-                    class="inline-flex rounded-full border border-line bg-surface px-3.5 py-1.5 text-[13px] font-medium text-ink transition-colors hover:border-accent/40 hover:bg-accent/5 hover:text-accent-ink"
-                  >
-                    {d.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <p>
-          {f.complianceLabel}: <a href={`mailto:${COMPLIANCE_EMAIL}`} class={linkCls}>{COMPLIANCE_EMAIL}</a>
-          {" · "}
-          {f.legalLabel}: <a href={`mailto:${LEGAL_EMAIL}`} class={linkCls}>{LEGAL_EMAIL}</a>
-        </p>
+        <!-- Document links live in the «Sections and documents» column, the e-mails in «Contacts» — not repeated here. -->
         <p>
           {f.techAdmin}: <a href={NEXTLAB_URL} target="_blank" rel="noopener" class={linkCls}>{NEXTLAB_URL}</a>
         </p>

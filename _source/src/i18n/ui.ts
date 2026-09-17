@@ -23,8 +23,6 @@ export interface UI {
     adminTitle: string;
     requisites: string[];
     disclaimer: string;
-    docsLabel: string;
-    docLinks: { slug: DocSlug; label: string }[];
     techAdmin: string;
     copyright: string;
     siteLabel: string;
@@ -102,7 +100,7 @@ const ru: UI = {
   },
   footer: {
     about: "Виртуальные карты для оплаты зарубежных сервисов. Сервис работает в рамках лимитов, правил карты и требований комплаенс.",
-    sections: "Разделы",
+    sections: "Разделы и документация",
     contacts: "Контакты",
     support: "Поддержка",
     complianceLabel: "Комплаенс",
@@ -116,13 +114,6 @@ const ru: UI = {
     ],
     disclaimer:
       "Сервис «Бери и плати» (BeriPay) — информационно-технологический сервис. Администратор сайта и сервиса: ООО «НекстЛаб» (рег. № 326188-3301-ООО, ИНН 00203202610365), Кыргызская Республика. Администратор не является банком, кредитной организацией, платёжной системой или эмитентом платёжных карт. Виртуальная карта выпускается и обслуживается партнёром card program на условиях его правил и Публичной оферты. Продукт предназначен для оплат по карте; снятие наличных / ATM и вывод на банковские счета не являются функцией сервиса. Доступ может потребовать проверки личности и ограничивается риск-правилами и санкционными требованиями.",
-    docsLabel: "Документы",
-    docLinks: [
-      { slug: "terms", label: "Оферта" },
-      { slug: "privacy-policy", label: "Политика конфиденциальности" },
-      { slug: "aml", label: "AML" },
-      { slug: "acceptable-use", label: "Допустимое использование" },
-    ],
     techAdmin: "Технический администратор",
     copyright: "© {year} Бери и плати! Все права защищены.",
     siteLabel: "Сайт",
@@ -200,7 +191,7 @@ const en: UI = {
   },
   footer: {
     about: "Virtual cards for paying for international services. The service operates within the limits, the card rules and compliance requirements.",
-    sections: "Sections",
+    sections: "Sections and documents",
     contacts: "Contacts",
     support: "Support",
     complianceLabel: "Compliance",
@@ -214,13 +205,6 @@ const en: UI = {
     ],
     disclaimer:
       "The BeriPay (“Бери и плати”) service is an information technology service. Administrator of the website and the service: NextLab LLC (ООО «НекстЛаб»), Registration No. 326188-3301-ООО, TIN (INN) 00203202610365, Kyrgyz Republic. The Administrator is not a bank, credit institution, payment system or payment card issuer. The virtual card is issued and serviced by a card program partner under its rules and the Public Offer. The product is intended for card payments; cash withdrawals / ATM and withdrawals to bank accounts are not functions of the service. Access may require identity verification and is restricted by risk rules and sanctions requirements.",
-    docsLabel: "Documents",
-    docLinks: [
-      { slug: "terms", label: "Public Offer" },
-      { slug: "privacy-policy", label: "Privacy Policy" },
-      { slug: "aml", label: "AML" },
-      { slug: "acceptable-use", label: "Acceptable Use" },
-    ],
     techAdmin: "Technical administrator",
     copyright: "© {year} BeriPay. All rights reserved.",
     siteLabel: "Website",
@@ -298,7 +282,7 @@ const pt: UI = {
   },
   footer: {
     about: "Cartões virtuais para pagar serviços internacionais. O serviço funciona dentro dos limites, das regras do cartão e dos requisitos de compliance.",
-    sections: "Seções",
+    sections: "Seções e documentos",
     contacts: "Contatos",
     support: "Suporte",
     complianceLabel: "Compliance",
@@ -312,13 +296,6 @@ const pt: UI = {
     ],
     disclaimer:
       "O serviço BeriPay (“Бери и плати”) é um serviço de tecnologia da informação. Administrador do site e do serviço: NextLab LLC (ООО «НекстЛаб»), nº de registro 326188-3301-ООО, INN 00203202610365, República Quirguiz. O Administrador não é banco, instituição de crédito, sistema de pagamento nem emissor de cartões de pagamento. O cartão virtual é emitido e mantido por um parceiro de card program, de acordo com as regras desse parceiro e com a Oferta Pública. O produto destina-se a pagamentos com cartão; saques em dinheiro / caixas eletrônicos (ATM) e transferências para contas bancárias não são funções do serviço. O acesso pode exigir verificação de identidade e é limitado por regras de risco e requisitos de sanções.",
-    docsLabel: "Documentos",
-    docLinks: [
-      { slug: "terms", label: "Oferta Pública" },
-      { slug: "privacy-policy", label: "Política de Privacidade" },
-      { slug: "aml", label: "AML" },
-      { slug: "acceptable-use", label: "Uso Aceitável" },
-    ],
     techAdmin: "Administrador técnico",
     copyright: "© {year} BeriPay. Todos os direitos reservados.",
     siteLabel: "Site",
