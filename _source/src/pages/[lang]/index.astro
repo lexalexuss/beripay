@@ -62,27 +62,26 @@ const btn =
     </div>
   </section>
 
-  <!-- Features. The panel is opaque, so the hero glow runs behind its top edge. -->
+  <!-- Features -->
   <section class="relative pb-16 lg:pb-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-surface px-5 py-12 sm:px-10 lg:px-12 lg:py-16">
-        <div class="mb-12 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.features.title}</h2>
-          <p class="mx-auto max-w-2xl text-muted">{ui.features.text}</p>
-        </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {
-            ui.features.items.map((f) => (
-              <div class="rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)]">
-                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-surface text-accent">
-                  <Icon name={f.icon as any} class="h-6 w-6" />
-                </div>
-                <h3 class="mb-2 text-lg font-semibold text-ink">{f.title}</h3>
-                <p class="text-muted">{f.text}</p>
+      <!-- The heading sits on an opaque panel, so the hero glow runs behind its top edge. -->
+      <div class="mx-auto mb-12 max-w-3xl rounded-3xl bg-surface px-6 py-10 text-center sm:px-10 lg:mb-14">
+        <h2 class="mb-4 text-3xl font-bold text-ink sm:text-4xl">{ui.features.title}</h2>
+        <p class="mx-auto max-w-2xl text-muted">{ui.features.text}</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          ui.features.items.map((f) => (
+            <div class="rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_32px_rgba(34,36,46,0.08)]">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-surface text-accent">
+                <Icon name={f.icon as any} class="h-6 w-6" />
               </div>
-            ))
-          }
-        </div>
+              <h3 class="mb-2 text-lg font-semibold text-ink">{f.title}</h3>
+              <p class="text-muted">{f.text}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
