@@ -14,6 +14,7 @@
   --color-ink: #22242e; /* main text («История», balance) */
   --color-muted: #7d7f82; /* secondary text (dates, «Добро пожаловать») */
   --color-surface: #f4f4f4; /* panels and icon circles */
+  --color-surface-deep: #eaeaea; /* footer: a step darker than the panels, to close the page */
   --color-line: #ebebeb; /* hairline borders (neutral, close to surface) */
   --color-page: #ffffff; /* page background */
 
@@ -23,6 +24,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+}
+
+/* On the darker footer the app's secondary grey drops to 3.3:1, so darken it there only. */
+footer {
+  --color-muted: #63666c;
 }
 
 body {
