@@ -1,53 +1,38 @@
 ---
-title: "Consentimento para o tratamento de dados pessoais do usuário do serviço BeriPay"
+title: "Consentimento do Utilizador para o Tratamento de Dados Pessoais do Serviço BeriPay (Operador: NextLab LLC)"
 ---
 
-## 1. Consentimento do cidadão para o tratamento de dados pessoais
+**Data da última atualização:** 30 de setembro de 2026
 
-**1.1.** Pelo presente instrumento, o Cidadão (doravante denominado **“Titular dos Dados Pessoais”, “Usuário”**), de forma livre, por sua própria vontade e em seu próprio interesse, concede ao Operador, **NextLab LLC (ООО «НекстЛаб»)**, nº de registro **326188-3301-ООО**, INN (número de identificação fiscal) **00203202610365**, endereço: Rua Toktogula, 141, sala 4a, distrito Pervomaisky, Bishkek, República Quirguiz (doravante denominado **“Operador”**), o consentimento para o tratamento de seus dados pessoais, nos termos do artigo 9 da Lei Federal nº 152-FZ “Sobre Dados Pessoais”, de 27 de julho de 2006.
+Ao registar-me, autenticar-me e/ou realizar quaisquer ações no serviço de tecnologia da informação **BeriPay** (incluindo o website [https://beripay.net](https://beripay.net/), a aplicação móvel e o bot do Telegram [https://t.me/BeriPay_bot](https://t.me/BeriPay_bot)), agindo de forma livre, por minha própria vontade e no meu próprio interesse, e confirmando a minha capacidade jurídica, dou o meu consentimento explícito e incondicional à **NextLab LLC** (ООО «НекстЛаб»), número de registo 326188-3301-ООО, INN 00203202610365, com sede em: Escritório 4a, Rua Toktogula, 141, Distrito de Pervomaisky, Bishkek, República Quirguiz (doravante designada **“Operador”**), para o tratamento dos meus dados pessoais nos seguintes termos:
 
-**1.2.** O presente consentimento é específico, informado e consciente.
+## 1. Finalidades do Tratamento de Dados Pessoais
 
-**1.3.** A finalidade do tratamento de dados pessoais é a celebração e o cumprimento das condições do Contrato (Oferta Pública de utilização do serviço de tecnologia da informação BeriPay para pagamentos fora da Federação Russa), a garantia da utilização, pelo Usuário, das funcionalidades do Site https://beripay.net/, do aplicativo e do chatbot no Telegram https://t.me/BeriPay_bot (doravante denominados, em conjunto, **serviço “BeriPay” (“Бери и плати”)**), destinados à emissão, para os Usuários, e à utilização, por estes, de cartão virtual de sistema de pagamento internacional, incluindo o registro da Conta (Área Pessoal), a emissão, para os Usuários, e a utilização, por estes, de cartão virtual de sistema de pagamento internacional, bem como a realização de estudos estatísticos ou de outra natureza para assegurar a possibilidade de utilização, refinamento e aprimoramento do serviço BeriPay.
+- Celebração e execução do Contrato de Utilização do Serviço (Oferta Pública);
+- Concessão de acesso à funcionalidade de tecnologia da informação do Serviço para interagir com parceiros emissores com vista à emissão e utilização de Cartões Virtuais;
+- Realização de procedimentos de verificação de identidade (KYC), controlo biométrico (Liveness) e rastreio de sanções em conformidade com as normas legais de PBC/LFT (AML);
+- Envio de notificações de serviço e transacionais, resposta a pedidos de Suporte e prevenção de atividades fraudulentas.
 
-**1.4.** Lista dos dados pessoais para cujo tratamento é concedido o consentimento do Titular dos Dados Pessoais: sobrenome, nome e patronímico (se houver), dia, mês e ano de nascimento, endereço de e-mail, número de telefone, endereço de registro, dados do documento de identidade (série e número do passaporte, órgão emissor e data de emissão etc.), dados do cartão bancário, número da conta corrente, INN, cookies e outros dados que possam ser obtidos no decorrer da utilização do serviço BeriPay pelo Usuário.
+## 2. Categorias de Dados Pessoais Tratados
 
-**1.5.** Lista das operações com dados pessoais para cuja realização é concedido o consentimento: todas as operações com dados pessoais, incluindo coleta, registro, sistematização, acumulação, armazenamento, retificação (atualização, alteração), extração, uso, transferência (difusão, fornecimento, acesso), despersonalização, bloqueio, eliminação e destruição de dados pessoais.
+- **Dados de Identificação:** Nome completo, data e local de nascimento, nacionalidade, dados do documento de identificação (série, número, data de emissão, entidade emissora), fotografias/cópias dos documentos;
+- **Dados Biométricos:** Imagem facial obtida durante a verificação biométrica (verificação de Liveness);
+- **Dados de Contacto e Conta:** Número de telefone, endereço de e-mail, nome de utilizador e ID numérico do Telegram;
+- **Dados Técnicos:** Endereço IP, ficheiros cookies, tipo e identificadores do dispositivo, sistema operativo, registos de sessão;
+- **Dados de Transações:** Histórico de pedidos de recarga, detalhes dos Cartões Virtuais, registos contabilísticos de saldo.
 
-**1.6.** O presente consentimento é concedido por prazo que se estende até a sua revogação.
+## 3. Transferência de Dados a Terceiros e Transferência Transfronteiriça
 
-## 2. Consentimento para o recebimento de informações publicitárias
+3.1. Encarrego e autorizo a transferência e transferência transfronteiriça dos meus dados pessoais a terceiros autorizados:
 
-O Titular dos Dados Pessoais consente com o tratamento de seus dados pessoais, inclusive para fins de promoção (publicidade) no mercado de produtos, trabalhos e serviços relacionados à utilização do serviço BeriPay. O Titular dos Dados Pessoais concorda em receber, tanto na Conta quanto por meio de envio de mensagens por e-mail e de notificações por aplicativos de mensagens, inclusive na forma de mensagens de voz e de chamadas para o número de telefone celular, comunicações de caráter publicitário e outras informações relacionadas ao serviço BeriPay.
+- **Parceiros credenciados especializados em verificação de identidade e análise de conformidade (provedores de KYC/AML)** — para verificação de documentos, controlo biométrico (Liveness) e rastreio de sanções;
+- **Parceiros emissores de Cartões Virtuais e operadores de programas de cartões** — para emissão, autorização e manutenção dos cartões;
+- **Provedores de gateways de pagamento e infraestrutura de TI** — para garantir o funcionamento técnico do Serviço.
 
-## 3. Transferência de dados pessoais a terceiros
+## 4. Prazo de Validade do Consentimento e Revogação
 
-O Titular dos Dados Pessoais consente que o Operador atribua o tratamento de dados pessoais a outra pessoa, a critério do Operador, nas condições e na extensão do presente Consentimento. A pessoa que realiza o tratamento de dados pessoais por incumbência do Operador é obrigada a observar os princípios e as regras de tratamento de dados pessoais previstos na Lei Federal nº 152-FZ “Sobre Dados Pessoais”, de 27 de julho de 2006.
+4.1. O presente consentimento entra em vigor no momento da sua aceitação (registo/utilização do Serviço) e permanece válido durante todo o período de utilização do Serviço e atividade da Conta.
 
-## 4. Direitos do titular dos dados pessoais
+4.2. **Retenção de Dados para Efeitos de AML:** Reconheço e concordo que, em conformidade com os requisitos legais internacionais e nacionais de AML (PBC/LFT), os dados pessoais recolhidos durante a verificação e o registo de transações serão conservados pelo Operador e pelos seus parceiros durante **pelo menos 5 (cinco) anos** após a cessação da relação ou encerramento da Conta.
 
-O Titular dos Dados Pessoais tem o direito:
-
-- de obter informações relativas ao tratamento de seus dados pessoais;
-
-- de exigir do Operador a retificação de seus dados pessoais, seu bloqueio ou destruição, caso os dados pessoais sejam incompletos, desatualizados, inexatos, obtidos ilicitamente ou não sejam necessários para a finalidade declarada do tratamento;
-
-- de revogar o presente consentimento mediante envio de notificação por escrito ao Operador;
-
-- de impugnar as ações ou omissões do Operador perante o órgão competente para a proteção dos direitos dos titulares de dados pessoais.
-
-## 5. Revogação do consentimento
-
-O presente consentimento pode ser revogado pelo Titular dos Dados Pessoais mediante envio de notificação por escrito ao Operador. A revogação do consentimento não afeta a licitude do tratamento de dados pessoais realizado até o momento do recebimento da revogação.
-
-## 6. Dados do Operador
-
-**Denominação:** NextLab LLC (ООО «НекстЛаб»)
-
-**Nº de registro:** 326188-3301-ООО
-
-**INN (número de identificação fiscal):** 00203202610365
-
-**Endereço:** Rua Toktogula, 141, sala 4a, distrito Pervomaisky, Bishkek, República Quirguiz
-
-**Suporte:** https://t.me/BeriPay_SupportBot
+4.3. O presente consentimento pode ser revogado mediante o envio de um pedido por escrito para o endereço de e-mail: **compliance@beripay.net**. Compreendo que a revogação do consentimento resulta na cessação imediata da prestação dos serviços do Serviço e no encerramento da Conta, sem prejuízo das obrigações legais de conservação de dados aplicáveis ao Operador no âmbito da legislação de AML.

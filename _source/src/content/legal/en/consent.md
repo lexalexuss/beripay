@@ -1,53 +1,38 @@
 ---
-title: "Consent to the Processing of Personal Data of a User of the BeriPay Service"
+title: "User Consent to Personal Data Processing of the BeriPay Service (Operator: NextLab LLC)"
 ---
 
-## 1. Consent of an Individual to the Processing of Personal Data
+**Date of Last Update:** September 30, 2026
 
-**1.1.** The Individual (hereinafter, the **“Personal Data Subject”, the “User”**) hereby, freely, of their own will and in their own interest, gives to the Operator, **NextLab LLC (ООО «НекстЛаб»)**, Registration No. **326188-3301-ООО**, TIN (INN) **00203202610365**, address: Office 4a, 141 Toktogula St., Pervomaisky District, Bishkek, Kyrgyz Republic (hereinafter, the **“Operator”**), consent to the processing of their personal data in accordance with Article 9 of Federal Law No. 152-FZ “On Personal Data” of 27 July 2006.
+By registering, authenticating, and/or performing any actions within the **BeriPay** information technology service (including the website [https://beripay.net](https://beripay.net/), mobile application, and Telegram bot [https://t.me/BeriPay_bot](https://t.me/BeriPay_bot)), acting freely, of my own free will, and in my own interest, and confirming my legal capacity, I hereby give my explicit and unconditional consent to **NextLab LLC** (ООО «НекстЛаб»), Registration No. 326188-3301-ООО, INN 00203202610365, legal address: Office 4a, 141 Toktogula St., Pervomaisky District, Bishkek, Kyrgyz Republic (hereinafter, the **“Operator”**), for the processing of my personal data under the following terms:
 
-**1.2.** This Consent is specific, informed and conscious.
+## 1. Purposes of Personal Data Processing
 
-**1.3.** The purpose of personal data processing is the conclusion and performance of the Agreement (the Public Offer on the Use of the BeriPay Information Technology Service for Payments Outside the Russian Federation), ensuring the User’s use of the functionality of the Website https://beripay.net/, the application and the Telegram chatbot https://t.me/BeriPay_bot (hereinafter collectively, the **“BeriPay” (“Бери и плати”) Service**), which are intended for the issuance of a Virtual Card of an international payment system to Users and its use by them, including registration of an Account (Personal Account), the issuance of a Virtual Card of an international payment system to Users and its use by them, and conducting statistical or other research to enable the use, further development and improvement of the BeriPay Service.
+- Conclusion and execution of the Agreement on the Use of the Service (Public Offer);
+- Provision of access to the information technology functionality of the Service for interacting with issuing partners for the issuance and use of Virtual Cards;
+- Execution of identity verification (KYC), biometric check (Liveness), and sanctions screening procedures in compliance with statutory AML/CFT regulations;
+- Sending service and transactional notifications, responding to Support requests, and preventing fraudulent activities.
 
-**1.4.** List of personal data to the processing of which the Personal Data Subject consents: surname, first name and patronymic (if any); day, month and year of birth; email address; telephone number; registration address; details of the identity document (passport series and number, issuing authority and date of issue, etc.); bank card details; settlement account number; TIN (INN); cookies; and other data that may be obtained in the course of the User’s use of the BeriPay Service.
+## 2. Scope of Personal Data Processed
 
-**1.5.** List of actions with personal data to the performance of which consent is given: all actions with personal data, including collection, recording, systematisation, accumulation, storage, rectification (updating, modification), retrieval, use, transfer (dissemination, provision, access), depersonalisation, blocking, deletion and destruction of personal data.
+- **Identification Data:** Full name, date and place of birth, citizenship, identity document details (series, number, date of issue, issuing authority), document photos/scans;
+- **Biometric Data:** Facial photo image obtained during biometric verification (Liveness check);
+- **Contact and Account Data:** Phone number, email address, username, display name, and numeric Telegram ID;
+- **Technical Data:** IP address, cookie files, device type and identifiers, operating system, session logs;
+- **Transaction Data:** Top-up request history, Virtual Card details, accounting balance records.
 
-**1.6.** This Consent is given for the period until it is withdrawn.
+## 3. Data Transfer to Third Parties and Cross-Border Transfer
 
-## 2. Consent to Receive Advertising Information
+3.1. I give my consent to entrust the processing, transfer, and cross-border transfer of my personal data to authorized third parties:
 
-The Personal Data Subject consents to the processing of their personal data, including for the purposes of promoting (advertising) on the market goods, works and services related to the use of the BeriPay Service. The Personal Data Subject agrees to receive, both in the Account and by way of email messages and messenger notifications, including in the form of voice messages and calls to their mobile phone number, advertising content and other information related to the BeriPay Service.
+- **Specialized accredited identity verification and compliance analytics partners (KYC/AML providers)** — for document verification, Liveness checks, and sanctions screening;
+- **Virtual Card issuing partners and card program operators** — for card issuance, transaction authorization, and card maintenance;
+- **Payment gateway and IT infrastructure providers** — to ensure the technical operation of the Service.
 
-## 3. Transfer of Personal Data to Third Parties
+## 4. Term of Consent and Revocation Procedure
 
-The Personal Data Subject consents to the Operator entrusting the processing of personal data to another person at the Operator’s discretion on the terms and to the extent of this Consent. A person processing personal data on behalf of the Operator shall comply with the principles and rules of personal data processing provided for by Federal Law No. 152-FZ “On Personal Data” of 27 July 2006.
+4.1. This consent is effective from the moment of acceptance (registration/usage of the Service) and remains valid throughout the entire period of Service usage and Account activity.
 
-## 4. Rights of the Personal Data Subject
+4.2. **Data Retention Duty for AML Purposes:** I acknowledge and agree that, pursuant to international and national AML regulations, personal data collected during verification and transaction accounting shall be retained by the Operator and its partners for **at least 5 (five) years** following the termination of the relationship or Account closure.
 
-The Personal Data Subject has the right:
-
-- to receive information concerning the processing of their personal data;
-
-- to require the Operator to rectify their personal data, block or destroy them if the personal data are incomplete, outdated, inaccurate, unlawfully obtained or not necessary for the stated purpose of processing;
-
-- to withdraw this Consent by sending a written notice to the Operator;
-
-- to appeal against actions or omissions of the Operator to the authorised body for the protection of the rights of personal data subjects.
-
-## 5. Withdrawal of Consent
-
-This Consent may be withdrawn by the Personal Data Subject by sending a written notice to the Operator. Withdrawal of consent does not affect the lawfulness of the processing of personal data carried out before the withdrawal was received.
-
-## 6. Operator Details
-
-**Name:** NextLab LLC (ООО «НекстЛаб»)
-
-**Registration No.:** 326188-3301-ООО
-
-**TIN (INN):** 00203202610365
-
-**Address:** Office 4a, 141 Toktogula St., Pervomaisky District, Bishkek, Kyrgyz Republic
-
-**Support:** https://t.me/BeriPay_SupportBot
+4.3. This consent may be revoked by submitting a written notice to the email address: **compliance@beripay.net**. I understand that revocation of consent results in the immediate termination of Service provision and Account closure, subject to the Operator's statutory AML retention obligations.
